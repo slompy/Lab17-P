@@ -1,5 +1,8 @@
 ﻿
-int[] scores = { 60, 80, 40, 80, 90 };
+using System.Runtime.InteropServices;
+
+int[] scores = new int[7];
+scores = Console.ReadLine()!;
 
 int SumArray(int[] numbers)
 {
@@ -14,7 +17,6 @@ int SumArray(int[] numbers)
     return sum;
 }
 
-Console.WriteLine(SumArray(new int[] { 5, -2, 7 }));
 
 int CountAtLeast(int[] numbers, int limit)
 {
@@ -32,7 +34,7 @@ int CountAtLeast(int[] numbers, int limit)
     return count;
 }
 
-Console.WriteLine(CountAtLeast(new int[] { 40, 50, 80 }, 50));
+
 
 int FindMax(int[] numbers)
 {
@@ -50,7 +52,7 @@ int FindMax(int[] numbers)
     return max;
 }
 
-System.Console.WriteLine(FindMax(scores));
+
 
 
 int FindMin(int[] numbers)
@@ -69,6 +71,23 @@ int FindMin(int[] numbers)
     return min;
 }
 
-Console.WriteLine(FindMin(new int[] { 12, 4, 9 }));
+
+
+int FindIndex(int[] numbers, int target)
+{
+    Console.Write("Индекс найденного числа: ");
+    int index = -1;
+
+    for (int i = 0; i < numbers.Length; i++)
+    {
+        if (numbers[i] == target)
+        {
+            return i;
+        }
+    }
+
+    return index;
+}
+
 
 
