@@ -2,7 +2,19 @@
 using System.Runtime.InteropServices;
 
 int[] scores = new int[7];
-scores = Console.ReadLine()!;
+
+for (int i = 0; i < scores.Length; i++) {
+    Console.Write($"Введите {i + 1} число: ");
+    scores[i] = int.Parse(Console.ReadLine()!);
+}
+
+Console.WriteLine(SumArray(scores));
+Console.WriteLine(FindMin(scores));
+Console.WriteLine(FindMax(scores));
+Console.WriteLine(CountAtLeast(scores, 50));
+Console.Write("Введите вашу цель: ");
+int target = int.Parse(Console.ReadLine()!);
+Console.WriteLine(FindIndex(scores, target));
 
 int SumArray(int[] numbers)
 {
@@ -14,7 +26,7 @@ int SumArray(int[] numbers)
         sum += number;
     }
 
-    return sum;
+    return sum; 
 }
 
 
@@ -67,7 +79,7 @@ int FindMin(int[] numbers)
             min = number;
         }
     }
-
+    // 67
     return min;
 }
 
@@ -88,6 +100,3 @@ int FindIndex(int[] numbers, int target)
 
     return index;
 }
-
-
-
