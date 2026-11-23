@@ -1,20 +1,21 @@
 ﻿
+using System.Globalization;
 using System.Runtime.InteropServices;
 
-int[] scores = new int[7];
+// int[] scores = new int[7];
 
-for (int i = 0; i < scores.Length; i++) {
-    Console.Write($"Введите {i + 1} число: ");
-    scores[i] = int.Parse(Console.ReadLine()!);
-}
+// for (int i = 0; i < scores.Length; i++) {
+//     Console.Write($"Введите {i + 1} число: ");
+//     scores[i] = int.Parse(Console.ReadLine()!);
+// }
 
-Console.WriteLine(SumArray(scores));
-Console.WriteLine(FindMin(scores));
-Console.WriteLine(FindMax(scores));
-Console.WriteLine(CountAtLeast(scores, 50));
-Console.Write("Введите вашу цель: ");
-int target = int.Parse(Console.ReadLine()!);
-Console.WriteLine(FindIndex(scores, target));
+// Console.WriteLine(SumArray(scores));
+// Console.WriteLine(FindMin(scores));
+// Console.WriteLine(FindMax(scores));
+// Console.WriteLine(CountAtLeast(scores, 50));
+// Console.Write("Введите вашу цель: ");
+// int target = int.Parse(Console.ReadLine()!);
+// Console.WriteLine(FindIndex(scores, target));
 
 int SumArray(int[] numbers)
 {
@@ -29,6 +30,18 @@ int SumArray(int[] numbers)
     return sum; 
 }
 
+int SumForAverage(int[] numbers)
+{
+    
+    int sum = 0;
+
+    foreach (int number in numbers)
+    {
+        sum += number;
+    }
+
+    return sum; 
+}
 
 int CountAtLeast(int[] numbers, int limit)
 {
@@ -100,3 +113,13 @@ int FindIndex(int[] numbers, int target)
 
     return index;
 }
+
+double CalculateAverage(int[] numbers)
+{
+    Console.Write("Среднее значение: ");
+    double average = (double)SumForAverage(numbers) / numbers.Length;
+    return average;
+}
+
+int[] values = { 1, 2 };
+Console.WriteLine(CalculateAverage(values));
